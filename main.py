@@ -2,7 +2,7 @@ import os
 import streamlit as st
 from openai import OpenAI
 
-API_KEY = os.environ.get("GROQ_API_KEY")
+API_KEY = os.environ.get("OPENAI_API_KEY")
 client = OpenAI(api_key=API_KEY, base_url="https://api.groq.com/openai/v1")
 
 # ----------------------------
@@ -105,4 +105,5 @@ if prompt := st.chat_input("Type your question..."):
     st.session_state.messages.append({"role": "assistant", "content": answer})
     with st.chat_message("assistant", avatar="👨‍⚕️"):
         st.markdown(answer)
+
 
